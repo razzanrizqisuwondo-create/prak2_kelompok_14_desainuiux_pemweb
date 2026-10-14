@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Hasil Pemesanan Barang</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      color: #222;
+    }
+    .halaman {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #fff;
+      border: 2px solid #333;
+    }
+    nav {
+      text-align: center;
+      padding: 14px;
+      border-bottom: 2px solid #333;
+    }
+    nav a {
+      color: #222;
+      text-decoration: none;
+      padding: 0 14px;
+    }
+    nav a:hover { text-decoration: underline; }
+    nav span { color: #888; }
+    main {
+      display: flex;
+      gap: 32px;
+      padding: 28px;
+      flex-wrap: wrap;
+    }
+    .gambar {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      flex-shrink: 0;
+    }
+    .gambar svg { display: block; width: 100%; height: 100%; }
+    form { flex: 1; min-width: 300px; }
+    .baris {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .baris > label,
+    .baris > .label {
+      width: 160px;
+      text-align: right;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+    .baris input[type="text"],
+    .baris input[type="email"],
+    .baris select {
+      width: 100%;
+      max-width: 280px;
+      padding: 5px 6px;
+      border: 2px solid #333;
+      box-sizing: border-box;
+    }
+    .centang { display: block; margin-bottom: 4px; }
+    .tombol {
+      text-align: center;
+      margin-top: 28px;
+    }
+    button {
+      background: #1a9a1a;
+      color: #fff;
+      border: 2px solid #0d5c0d;
+      padding: 8px 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #148014; }
+    :focus-visible { outline: 3px solid #0b57d0; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="halaman">
+
+    <nav>
+      <a href="#">Home</a><span>|</span>
+      <a href="#">Register</a><span>|</span>
+      <a href="#">Policy</a><span>|</span>
+      <a href="#">About</a>
+    </nav>
+
+    <main>
+      <div class="gambar" role="img" aria-label="Foto barang">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="0" x2="200" y2="200" stroke="#333" stroke-width="2"/>
+          <line x1="200" y1="0" x2="0" y2="200" stroke="#333" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <form action="#" method="post">
+
+        <div class="baris">
+          <span class="label">Title Here :</span>
+          <span>MacBook Air £800</span>
+        </div>
+
+        <div class="baris">
+          <span class="label">Description :</span>
+          <span>
+            Year : 2009<br>
+            Model :<br>
+            Condition : Mint
+          </span>
+        </div>
+
+        <div class="baris">
+          <span class="label">Total Amount :</span>
+          <span>£800</span>
+        </div>
+
+        <div class="baris">
+          <span class="label">Pay to :</span>
+          <span>123-456-789-0</span>
+        </div>
+
+        <div class="baris">
+          <label for="paymentType">Payment Type :</label>
+          <select id="paymentType" name="paymentType">
+            <option value="visa-debit" selected>Visa Debit</option>
+            <option value="visa-credit">Visa Credit</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="transfer">Bank Transfer</option>
+          </select>
+        </div>
+
+        <div class="baris">
+          <label for="accountHolder">Account Holder :</label>
+          <input type="text" id="accountHolder" name="accountHolder" placeholder="Name Here" required>
+        </div>
+
+        <div class="baris">
+          <label for="accountNo">Account No :</label>
+          <input type="text" id="accountNo" name="accountNo" placeholder="123-456-789-0" required>
+        </div>
+
+        <div class="baris">
+          <span class="label"></span>
+          <div>
+            <label class="centang">
+              <input type="checkbox" name="sendMobile" checked> Send to Mobile Phone
+            </label>
+            <label class="centang">
+              <input type="checkbox" name="sendEmail" checked> Email me copy of transaction
+            </label>
+          </div>
+        </div>
+
+        <div class="baris">
+          <label for="mobilePhone">Send to Mobile Phone :</label>
+          <input type="text" id="mobilePhone" name="mobilePhone" placeholder="1234567890, 1234567891">
+        </div>
+
+        <div class="baris">
+          <label for="email">Send to Email :</label>
+          <input type="email" id="email" name="email" multiple placeholder="nama@contoh.com, nama2@contoh.com">
+        </div>
+
+        <div class="tombol">
+          <button type="submit">Pay using QuidLink</button>
+        </div>
+
+      </form>
+    </main>
+
+  </div>
+
+</body>
+</html>
